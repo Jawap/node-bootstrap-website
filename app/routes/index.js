@@ -12,19 +12,20 @@
 'use strict';
 
 module.exports = function (app) {
+    // app.get('/', function (req, res) {
+    //     res.render('index', {});
+    // });
     app.get('/', function (req, res) {
-        res.render('index', {});
-    });
-    app.get('/about', function (req, res) {
-        res.redirect('http://www.alt-f1.be');
-    });
-    app.get('/contact', function (req, res) {
-        res.redirect('http://www.alt-f1.be/contact-us.html');
-    });
-    app.get('/template/:selectedTemplate', function (req, res) {
-        res.render('bootstrap3-templates/' + req.params.selectedTemplate, {
+        res.render('index', {
             'pathToAssets': '/bootstrap-3.0.0',
-            'pathToSelectedTemplateWithinBootstrap' : '/bootstrap-3.0.0/examples/' + req.params.selectedTemplate
+            'pathToSelectedTemplateWithinBootstrap' : '/stylesheets/carousel'
         });
     });
+    app.get('/about', function (req, res) {
+        res.redirect('http://www.commsp.ee.ic.ac.uk/jpearson/');
+    });
+    app.get('/contact', function (req, res) {
+        res.redirect('http://www.commsp.ee.ic.ac.uk/jpearson/contact');
+    });
+    
 };
