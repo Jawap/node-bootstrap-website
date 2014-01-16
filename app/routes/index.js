@@ -20,7 +20,7 @@ module.exports = function (app) {
   app.get('/contact', function (req, res) {
     res.redirect('http://www.commsp.ee.ic.ac.uk/jpearson/contact');
   });
-  app.get('/update/:key', function (req, res) {
+  app.post('/update/:key', function (req, res) {
     var validKey = process.env.UPDATE_KEY;
     var inputKey = req.params.key;
     var keys = {};
