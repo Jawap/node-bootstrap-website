@@ -1,7 +1,9 @@
 /*
  creating a Express app initializing it with the HelloWorld message
  */
+/*jslint white: false */
 'use strict';
+
 
 var PORT_LISTENER = 3001;
 console.log('I am listening to this port: http://localhost:%s', PORT_LISTENER);
@@ -35,6 +37,25 @@ require('./routes/index')(app);
 app.use(app.router);
 app.use(express.static(path.join(__dirname, appConfig.directories.publicDir)));
 
+app.use(function(req, res){
+  res.status(404);
+
+  // respond with html page
+  if (req.accepts('html')) {
+    res.render('404', { url: req.url });
+    //res.render('404', { url: 'test' });
+    return;
+  }
+
+  // respond with json
+  if (req.accepts('json')) {
+    res.send({ error: 'Not found' });
+    return;
+  }
+
+  // default to plain-text. send()
+  res.type('txt').send('Not found');
+});
 app.use(function (req, res, next) {
     console.log('req.body: ' + JSON.stringify(req.body));
     next();
