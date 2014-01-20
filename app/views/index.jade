@@ -39,23 +39,7 @@ html(lang='en')
                                     a(href='about') About
                                 li
                                     a(href='contact') Contact
-                                li.dropdown
-                                    a.dropdown-toggle(href='#', data-toggle='dropdown')
-                                        | Dropdown
-                                        b.caret
-                                    ul.dropdown-menu
-                                        li
-                                            a(href='#') Action
-                                        li
-                                            a(href='#') Another action
-                                        li
-                                            a(href='#') Something else here
-                                        li.divider
-                                        li.dropdown-header Nav header
-                                        li
-                                            a(href='#') Separated link
-                                        li
-                                            a(href='#') One more separated link
+
         //
             Carousel
         #myCarousel.carousel.slide
@@ -73,7 +57,7 @@ html(lang='en')
                             p
                                 | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
                             p
-                                a.btn.btn-large.btn-primary(href='#') Sign up today
+                                a.btn.btn-large.btn-primary(href='#about') Sign up today
                 .item
                     img(src='assets/images/food.jpg', alt='Second slide', max-width= 'none')
                     .container
@@ -82,7 +66,7 @@ html(lang='en')
                             p
                                 | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
                             p
-                                a.btn.btn-large.btn-primary(href='#') Learn more
+                                a.btn.btn-large.btn-primary(href='#what') Learn more
                 .item
                     img(src='assets/images/wall.jpg', alt='Second slide', max-width= 'none')
                     .container
@@ -91,7 +75,7 @@ html(lang='en')
                             p
                                 | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
                             p
-                                a.btn.btn-large.btn-primary(href='#') Browse gallery
+                                a.btn.btn-large.btn-primary(href='#papers') Browse gallery
             a.left.carousel-control(href='#myCarousel', data-slide='prev')
                 span.glyphicon.glyphicon-chevron-left
             a.right.carousel-control(href='#myCarousel', data-slide='next')
@@ -107,59 +91,65 @@ html(lang='en')
             .row
                 .col-lg-4
                     img.img-circle(src='data:image/png;base64,', data-src='#{pathToAssets}/assets/js/holder.js/140x140', alt='Generic placeholder image')
-                    h2 Heading
+                    h2 About me
                     p
                         | Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
                     p
-                        a.btn.btn-default(href='#') View details »
+                        a.btn.btn-default(href='#about') View details »
+                // /.col-lg-4
+
+                .col-lg-4
+                    img.img-circle(src='assets/images/vyclone.png', alt='Generic placeholder image')
+                    h2 What I do
+                    p
+                        | Currently I am a senior researcher at
+                        | <a href="http://vyclone.com">Vyclone</a>
+                        | working with video as well as developing with server-side NodeJS. Previously I was a PhD researcher at
+                        | <a href="http://www3.imperial.ac.uk/electricalengineering">Imperial College London</a>.
+
+                    p
+                        a.btn.btn-default(href='#what') View details »
                 // /.col-lg-4
 
                 .col-lg-4
                     img.img-circle(src='data:image/png;base64,', data-src='#{pathToAssets}/assets/js/holder.js/140x140', alt='Generic placeholder image')
-                    h2 Heading
-                    p
-                        | Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
-                    p
-                        a.btn.btn-default(href='#') View details »
-                // /.col-lg-4
-
-                .col-lg-4
-                    img.img-circle(src='data:image/png;base64,', data-src='#{pathToAssets}/assets/js/holder.js/140x140', alt='Generic placeholder image')
-                    h2 Heading
+                    h2 Publications and patents
                     p
                         | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
                     p
-                        a.btn.btn-default(href='#') View details »
+                        a.btn.btn-default(href='#papers') View details »
                 // /.col-lg-4
             // /.row
-
+            a#about
             // START THE FEATURETTES
             hr.featurette-divider
             .row.featurette
                 .col-md-7
                     h2.featurette-heading
-                        | First featurette heading.
+                        | About Me.
                         span.text-muted It'll blow your mind.
                     p.lead
                         | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
                 .col-md-5
                     img.featurette-image.img-responsive(src='data:image/png;base64,', data-src='#{pathToAssets}/assets/js/holder.js/500x500/auto', alt='Generic placeholder image')
             hr.featurette-divider
+            a#what
             .row.featurette
                 .col-md-5
                     img.featurette-image.img-responsive(src='data:image/png;base64,', data-src='#{pathToAssets}/assets/js/holder.js/500x500/auto', alt='Generic placeholder image')
                 .col-md-7
                     h2.featurette-heading
-                        | Oh yeah, it's that good.
-                        span.text-muted See for yourself.
+                        | What I do.
+                        span.text-muted Mostly program.
                     p.lead
                         | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
             hr.featurette-divider
+            a#papers
             .row.featurette
                 .col-md-7
                     h2.featurette-heading
-                        | And lastly, this one.
-                        span.text-muted Checkmate.
+                        | Papers
+                        span.text-muted and patents.
                     p.lead
                         | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
                 .col-md-5
