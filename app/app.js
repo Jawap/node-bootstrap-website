@@ -37,7 +37,7 @@ require('./routes/index')(app);
 app.use(app.router);
 app.use(express.static(path.join(__dirname, appConfig.directories.publicDir)));
 
-app.use(function(req, res){
+app.use(function (req, res) {
   res.status(404);
 
   // respond with html page
