@@ -18,9 +18,36 @@ html(lang='en')
 
         // Custom styles for this template
         link(href='#{pathToSelectedTemplateWithinBootstrap}/carousel.css', rel='stylesheet')
-    //
-        NAVBAR
+        //NAVBAR
+
     body
+        #myModal.modal.fade.in(id="myModal" )
+            .modal-dialog.wide-modal
+                .modal-content
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
+                        h4.myModalLabel.modal-title
+                          | Contact me
+                    .modal-body
+                      form.contact(action='/contact', name='contact', id='contact', method='post')
+                          p
+                            label(for='name', class='label label-default') Name:
+                            br
+                            input.input-xlarge(name='name', type='text', value='', id='name')
+                          p
+                            label(for='email', class='label label-default') Email:
+                            br
+                            input.input-xlarge(name='email', type='text', value='', id='email')
+                          p
+                            label(for='message', class='label label-default') Message:
+                            br
+                            textarea.input-xlarge(name='message', cols='40', rows='10', id='message')
+                          p
+                            #emailResponse.label
+                    .modal-footer
+                        input(name='submit', type='submit', value='Send', id='submit', class='btn btn-success')
+                        button.btn.btn-primary(type='button', data-dismiss='modal') Close
+
         .navbar-wrapper
             .container
                 .navbar.navbar-inverse.navbar-static-top
@@ -38,7 +65,7 @@ html(lang='en')
                                 li
                                     a(href='https://jinsanadventure.wordpress.com/') Fun
                                 li
-                                    a(href='contact') Contact
+                                    a(data-toggle='modal', href='#myModal') Contact
 
         //
             Carousel
@@ -137,7 +164,7 @@ html(lang='en')
                         h3.text-muted Employment record
                         ul#Employment
                               li <b>(Nov 2014 – Present)</b> Tido-music (contracting)
-                              li <b>(2013 -  Oct 2014)</b>Vyclone Inc (Chief Video Scientist/ CTO (2014))
+                              li <b>(2013 -  Oct 2014)</b> Vyclone Inc (Chief Video Scientist/ CTO (2014))
                               li <b>(2012)</b> Selfridges, DENIM project with Rumpus Room
                               li <b>(2012)</b> Vyclone Inc (Industrial experience (2 months))
                               li <b>(2010 - 2011)</b>	PhD Student Representative, Staff/Student liaison, CSP group server admin
@@ -211,15 +238,32 @@ html(lang='en')
                 p.pull-right
                     a(href='#') Back to top
                 p.text-center
-                    | Contact : james *at* jawap *dot* co uk
+                    a.btn.btn-primary.btn-large(data-toggle='modal', href='#myModal') Contact me
                 p
                     | © 2015 James Pearson.
         // /.container
         //
             Bootstrap core JavaScript
 
-
         // Placed at the end of the document so the pages load faster
         script(src='#{pathToAssets}/assets/js/jquery.js')
         script(src='#{pathToAssets}/dist/js/bootstrap.min.js')
         script(src='#{pathToAssets}/assets/js/holder.js')
+        script
+          $(document).ready(function () {
+            $("input#submit").click(function(){
+              $.ajax({
+              type: "POST",
+              url: "/contact", //process to mail
+              data: $('form.contact').serialize(),
+                success: function(msg){
+                  $("input#submit").hide()
+                  $("#emailResponse").addClass('label label-success').html(msg) //hide button and show thank you
+                  //$("#myModal").modal('hide'); //hide popup
+                },
+                error: function(msg){
+                  $("#emailResponse").addClass('label label-danger').html(msg) //hide button and show thank you
+                }
+              });
+            });
+          });
