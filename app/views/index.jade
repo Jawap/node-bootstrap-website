@@ -6,7 +6,7 @@ html(lang='en')
         meta(name='description', content='')
         meta(name='author', content='')
         link(rel='shortcut icon', href='#{pathToAssets}/assets/ico/favicon.png')
-        title James Pearson's website [UNDER CONSTRUCTION]
+        title James Pearson's website
 
         // Bootstrap core CSS
         link(href='#{pathToAssets}/dist/css/bootstrap.css', rel='stylesheet')
@@ -29,15 +29,34 @@ html(lang='en')
                         h4.myModalLabel.modal-title
                           | Contact me
                     .modal-body
-                      form.contact(action='/contact', name='contact', id='contact', method='post')
+                      //form.contact(action='/contact', name='contact', id='contact', method='post')
+                      //    p
+                      //      label(for='name', class='label label-default') Name:
+                      //      br
+                      //      input.input-xlarge(name='name', type='text', value='', id='name')
+                      //    p
+                      //      label(for='email', class='label label-default') Email:
+                      //      br
+                      //      input.input-xlarge(name='email', type='text', value='', id='email')
+                      //    p
+                      //      label(for='message', class='label label-default') Message:
+                      //      br
+                      //      textarea.input-xlarge(name='message', cols='40', rows='10', id='message')
+                      //    p
+                      //      #emailResponse.label
+                    //.modal-footer
+                    //    input(name='submit', type='submit', value='Send', id='submit', class='btn btn-success')
+                    //    button.btn.btn-primary(type='button', data-dismiss='modal') Close
+
+                    form.contact(action='/contact', name='contact', id='contact', method='post')
                           p
-                            label(for='name', class='label label-default') Name:
+                            label(for='name', class='label label-default') :
                             br
-                            input.input-xlarge(name='name', type='text', value='', id='name')
+                            |
                           p
                             label(for='email', class='label label-default') Email:
                             br
-                            input.input-xlarge(name='email', type='text', value='', id='email')
+
                           p
                             label(for='message', class='label label-default') Message:
                             br
@@ -48,6 +67,10 @@ html(lang='en')
                         input(name='submit', type='submit', value='Send', id='submit', class='btn btn-success')
                         button.btn.btn-primary(type='button', data-dismiss='modal') Close
 
+
+
+
+
         .navbar-wrapper
             .container
                 .navbar.navbar-inverse.navbar-static-top
@@ -57,15 +80,18 @@ html(lang='en')
                                 span.icon-bar
                                 span.icon-bar
                                 span.icon-bar
-                            a.navbar-brand(href='#') James Pearson [UNDER CONSTRUCTION]
+                            a.navbar-brand(href='#') Dr James Pearson
                         .navbar-collapse.collapse
                             ul.nav.navbar-nav
                                 li.active
                                     a(href='#') Home
                                 li
-                                    a(href='https://jinsanadventure.wordpress.com/') Fun
+                                    :verbatim
+                                       <a href="http://www.google.com/recaptcha/mailhide/d?k=01M_Etob5hRqk-Js91sEGXwQ==&amp;c=htbT0nzM02sWi8HbXdNKFCMDWOroKDGjXjLcfNa30oU=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\x3d01M_Etob5hRqk-Js91sEGXwQ\x3d\x3d\x26c\x3dhtbT0nzM02sWi8HbXdNKFCMDWOroKDGjXjLcfNa30oU\x3d', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Reveal this e-mail address">Contact</a>
+
                                 li
-                                    a(data-toggle='modal', href='#myModal') Contact
+                                    a(href='https://www.linkedin.com/in/james-pearson-68675b18') LinkedIn
+
 
         //
             Carousel
@@ -87,7 +113,7 @@ html(lang='en')
                             p
                               a.btn.btn-large.btn-primary(href='#about') About
                 .item
-                    img(src='assets/images/food.jpg', alt='Second slide', max-width= 'none').img-responsive
+                    img(src='assets/images/origami_ghost.jpg', alt='Second slide', max-width= 'none').img-responsive
                     .container
                         .carousel-caption
                             h1 NodeJs&nbsp;
@@ -98,7 +124,7 @@ html(lang='en')
                             p
                                 a.btn.btn-large.btn-primary(href='#what') What I've done
                 .item
-                    img(src='assets/images/ele.jpg', alt='Second slide', max-width= 'none').img-responsive
+                    img(src='assets/images/origami_ghost.jpg', alt='Second slide', max-width= 'none').img-responsive
                     .container
                         .carousel-caption
                             h1 Academic research&nbsp;
@@ -135,7 +161,7 @@ html(lang='en')
                     p
                         | Currently I am contracting, previously I was CTO at
                         | <a href="http://vyclone.com">Vyclone</a>
-                        | working with cloud based video combination as well as developing with server-side NodeJS. Before that I was a PhD researcher at
+                        | working on a collaborative cloud based video platform as well as developing with server-side NodeJS. Before that I was a PhD researcher at
                         | <a href="http://www3.imperial.ac.uk/electricalengineering">Imperial College London</a>.
 
                     p
@@ -158,35 +184,37 @@ html(lang='en')
                 .col-md-7
                     h2.featurette-heading
                         | About Me.&nbsp;
-                        span.text-muted Mostly work I've done.
+                        span.text-muted Work summary.
                     p.lead
-                        | I've worked in a variety of small and medium firms as well as some contract work. I have finished a PhD in 3D computer vision.
+                        ul
+                            li Over 10 years of experience of developing advanced computer-vision algorithms in both academic and industrial environments.
+                            li A focus on the practical, efficient implementation of algorithms.
+                            li Worked on several technical proof-of-concept projects (leading to several patents), as well as providing bespoke systems for large corporations (Fox, BBC, Selfridges).
+                            li Real-world experience in designing scalable server architectures and development for cloud video processing.
+                            li Practical experience of team leadership and wider business aspects of a start-up company.
                         h3.text-muted Employment record
                         ul#Employment
-                              li <b>(Nov 2014 – Present)</b> Tido-music (contracting)
-                              li <b>(2013 -  Oct 2014)</b> Vyclone Inc (Chief Video Scientist/ CTO (2014))
-                              li <b>(2012)</b> Selfridges, DENIM project with Rumpus Room
-                              li <b>(2012)</b> Vyclone Inc (Industrial experience (2 months))
-                              li <b>(2010 - 2011)</b>	PhD Student Representative, Staff/Student liaison, CSP group server admin
-                              li <b>(2010)</b> PhD student Imperial College london (TIGER, 3D Image Based Rendering computer vision)
-                              li <b>(2008)</b> Snell Ltd (project with BBC, Surrey University and Hawkeye)
-                              li <b>(2004 - 2007)</b> Algorithms Group (R&D) Snell Ltd (Gap year and University holidays)
+                            li <b>June 2015 – Present</b> 		Chief Technology Officer (CTO) - Vyclone Inc
+                            li <b>April 2015 – May 2015</b> 	Contracted to establish commercial viability of research spin-off – 					Imperial College
+                            li <b>Nov 2014 – Mar 2015</b> 	Travel sabbatical and ad-hoc consultancy
+                            li <b>Sept 2013 – Oct 2014</b> 	Chief Video Scientist/ CTO – Vyclone Inc
+                            li <b>Sept 2009 – Sept 2013</b> 	PhD student in Electrical and Electronic Engineering Department at 				Imperial College – Thesis Title  “Plenoptic Layer-Based Modeling for 				Image Based Rendering”
+                            li <b>Sept 2004 – Sept 2005</b> 	Student engineer – Algorithms Group (R&D) Snell Ltd (formerly Snell 				and Wilcox). Associated summer intern work in 2006 – 2008
                 .col-md-5
                     img.featurette-image.img-responsive(src='assets/images/hallasan_1.jpg', alt='Generic placeholder image')
             hr.featurette-divider
             a#what
             .row.featurette
                 .col-md-5
-                    img.featurette-image.img-responsive(src='assets/images/rock.jpg', alt='Generic placeholder image')
+                    //img.featurette-image.img-responsive(src='assets/images/rock.jpg', alt='Generic placeholder image')
                     p
                       img.img-responsive(src='assets/images/dennim.jpg', alt='DENIM collage')
                 .col-md-7
                     h2.featurette-heading
-                        | What I do.&nbsp;
-                        span.text-muted Mostly program.
+                        | Projects.&nbsp;
+                        span.text-muted Some interesting work I've done.
                     p.lead
-                        | I program professionally and for fun, recently I have been doing a lot of work on large scale architecture with NodeJS and Mongo
-                        |but my true love is Computer Vision and video compression.
+                        | My background is in computer vision, particularly video analysis and 3D view interpolation. Recently I have been doing more work on large scale video processing and streaming architecture with NodeJS and Mongo.
                     h3.text-muted Some recent Projects
                     p
                       | <b>(2014) Vyclone</b> As CTO of Vyclone I further developed the architecture and provided the technical direction of the company.
@@ -196,9 +224,7 @@ html(lang='en')
                       |thousands of people all around the world contributing on a live radio broadcast on the show Dan and Phil.
                       |In addition I have worked with Sony, One Direction, Madonna, Ed Sheeran on large crowd sourced music videos and promotions.
                     p
-                      |<b>(2012) <a href="http://www.creativereview.co.uk/cr-blog/2013/june/selfridges-denim-project">DENIM</a></b> (Working with the Rumpus Room for Selfridges) I was tasked with developing an ambitious multi-camera synthesis algorithm
-                      |for a photo-shoot for Selfridges upcoming DENIM line. I was tasked to develop an algorithm to take all the user generated content from members
-                      |of the public and using 3D image triangulation and manipulation stitch them together into a coherent patchwork for the final publicity shot.
+                      |<b>(2012) <a href="https://www.youtube.com/watch?v=EHP3RAz6jL0">DENIM</a></b> (Working with the Rumpus Room for Selfridges) Developed an ambitious multi-camera synthesis algorithm for a photo-shoot for Selfridges upcoming DENIM line. Taking user-generated content from members of the public and using 3D image triangulation and manipulation to stitch them together into a coherent patchwork for the final publicity shot.
 
             hr.featurette-divider
             a#papers
@@ -229,7 +255,9 @@ html(lang='en')
                           li C. Gilliam, <b>J. Pearson</b>, M. Brookes & P. L. Dragotti,  <b>“Image based rendering with depth cameras: How many are needed?”</b> Proc. IEEE Int. Conf. Acoustic Speech & Signal Processing (ICASSP), Tokyo,  2012
                           li <b>J. Pearson</b>, P. L. Dragotti & M. Brookes  <b>“Accurate non-iterative depth layer extraction algorithm for image based rendering”</b> Proc. IEEE Int. Conf. Acoustic Speech & Signal Processing (ICASSP), Prague, 2011
                 .col-md-5
-                    img.featurette-image.img-responsive(src='assets/images/monkey_1.jpg', alt='Generic placeholder image')
+                    :verbatim
+                        <iframe width="420" height="315" src="https://www.youtube.com/embed/w1elFokBU2A" frameborder="0" allowfullscreen></iframe>
+                    //img.featurette-image.img-responsive(src='assets/images/monkey_1.jpg', alt='Generic placeholder image')
             hr.featurette-divider
             // /END THE FEATURETTES
 
@@ -238,9 +266,10 @@ html(lang='en')
                 p.pull-right
                     a(href='#') Back to top
                 p.text-center
-                    a.btn.btn-primary.btn-large(data-toggle='modal', href='#myModal') Contact me
+                    :verbatim
+                        <a href="http://www.google.com/recaptcha/mailhide/d?k=01M_Etob5hRqk-Js91sEGXwQ==&amp;c=htbT0nzM02sWi8HbXdNKFCMDWOroKDGjXjLcfNa30oU=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\x3d01M_Etob5hRqk-Js91sEGXwQ\x3d\x3d\x26c\x3dhtbT0nzM02sWi8HbXdNKFCMDWOroKDGjXjLcfNa30oU\x3d', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Reveal this e-mail address">Contact Me</a>
                 p
-                    | © 2015 James Pearson.
+                    | © 2016 James Pearson.
         // /.container
         //
             Bootstrap core JavaScript
